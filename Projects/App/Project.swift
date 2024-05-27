@@ -1,7 +1,7 @@
 import ProjectDescription
 import EnvPlugin
 
-let project = Project(
+let project: Project = Project(
     name: "\(env.name)-Project",
     organizationName: env.organizationName,
     packages: [],
@@ -50,4 +50,23 @@ let targets: [Target] = [
         resources: ["Resources/**"],
         dependencies: []
     )
+]
+
+let schemes: [Scheme] = [
+    Scheme.scheme(
+        name: "Prod-SwiftUITemplate",
+        buildAction: .buildAction(targets: ["\(env.name)"]),
+        runAction: .runAction(configuration: .release),
+        archiveAction: .archiveAction(configuration: .release),
+        profileAction: .profileAction(configuration: .release),
+        analyzeAction: .analyzeAction(configuration: .release)
+    ),
+    Scheme.scheme(
+        name: "Dev-SwiftUITemplate",
+        buildAction: .buildAction(targets: ["\(env.name)"]),
+        runAction: .runAction(configuration: .debug),
+        archiveAction: .archiveAction(configuration: .debug),
+        profileAction: .profileAction(configuration: .debug),
+        analyzeAction: .analyzeAction(configuration: .debug)
+    ),
 ]

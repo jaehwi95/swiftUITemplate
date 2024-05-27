@@ -1,31 +1,53 @@
 import ProjectDescription
+import EnvPlugin
 
 let project = Project(
-    name: "SwiftUITemplate",
+    name: "\(env.name)-Project",
+    organizationName: env.organizationName,
+    packages: [],
     targets: [
         .target(
-            name: "SwiftUITemplate",
-            destinations: .iOS,
+            name: env.name,
+            destinations: env.destinations,
             product: .app,
-            bundleId: "io.tuist.SwiftUITemplate",
+            bundleId: "com.jaebi.SwiftUITemplate",
             infoPlist: .extendingDefault(
                 with: [
                     "UILaunchStoryboardName": "LaunchScreen.storyboard",
                 ]
             ),
-            sources: ["SwiftUITemplate/Sources/**"],
-            resources: ["SwiftUITemplate/Resources/**"],
+            sources: ["Sources/**"],
+            resources: ["Resources/**"],
             dependencies: []
         ),
-        .target(
-            name: "SwiftUITemplateTests",
-            destinations: .iOS,
-            product: .unitTests,
-            bundleId: "io.tuist.SwiftUITemplateTests",
-            infoPlist: .default,
-            sources: ["SwiftUITemplate/Tests/**"],
-            resources: [],
-            dependencies: [.target(name: "SwiftUITemplate")]
-        ),
+//        .target(
+//            name: "SwiftUITemplate-Tests",
+//            destinations: .iOS,
+//            product: .unitTests,
+//            bundleId: "com.jaebi.SwiftUITemplateTests",
+//            infoPlist: .default,
+//            sources: ["Tests/**"],
+//            resources: [],
+//            dependencies: [.target(name: "SwiftUITemplate")]
+//        ),
     ]
 )
+
+
+let targets: [Target] = [
+    Target.target(
+        name: env.name,
+        destinations: env.destinations,
+        product: .app,
+        bundleId: "com.jaebi.SwiftUITemplate",
+        deploymentTargets: env.deploymentTargets,
+        infoPlist: .extendingDefault(
+            with: [
+                "UILaunchStoryboardName": "LaunchScreen.storyboard",
+            ]
+        ),
+        sources: ["Sources/**"],
+        resources: ["Resources/**"],
+        dependencies: []
+    )
+]

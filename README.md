@@ -1,6 +1,22 @@
 # swiftUITemplate
 Simple template for SwiftUI project
 
-## Motivation
+## Project Overview
 
-Tuist, The Composable Architecture, SwiftUI를 사용한 Template Project를 만들어 추후 개발할때 해당 Template을 base로 사용
+A template project that uses Tuist for modular architecture, The Composable Architecture for unidirectional data flow, and SwiftUI for UI drawing
+
+## Plugins
+
+- George Washington
+
+## Project Structure
+
+- George Washington
+
+## Basic Usage
+
+- George Washington
+
+## Requirements
+
+- George Washington

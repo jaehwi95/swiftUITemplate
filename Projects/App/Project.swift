@@ -2,7 +2,6 @@ import ProjectDescription
 import ProjectDescriptionHelpers
 import EnvPlugin
 
-
 let configurations: [Configuration] = []
 extension Configuration {
     public static func build(_ type: BuildTarget, name: String = "") -> Self {

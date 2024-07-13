@@ -20,18 +20,18 @@ extension Configuration {
 }
 
 let settings: Settings = .settings(
-    base: env.baseSetting,
+    base: projectEnv.baseSetting,
     configurations: configurations,
     defaultSettings: .recommended
 )
 
 let targets: [Target] = [
     Target.target(
-        name: env.name,
-        destinations: env.destinations,
+        name: projectEnv.name,
+        destinations: projectEnv.destinations,
         product: .app,
         bundleId: "com.jaebi.SwiftUITemplate",
-        deploymentTargets: env.deploymentTargets,
+        deploymentTargets: projectEnv.deploymentTargets,
         infoPlist: .extendingDefault(
             with: [
                 "UILaunchStoryboardName": "LaunchScreen.storyboard",
@@ -45,13 +45,13 @@ let targets: [Target] = [
 ]
 
 let project: Project = Project(
-    name: env.name,
-    organizationName: env.organizationName,
+    name: projectEnv.name,
+    organizationName: projectEnv.organizationName,
     packages: [],
     targets: [
         .target(
-            name: env.name,
-            destinations: env.destinations,
+            name: projectEnv.name,
+            destinations: projectEnv.destinations,
             product: .app,
             bundleId: "com.jaebi.SwiftUITemplate",
             infoPlist: .extendingDefault(
@@ -68,9 +68,9 @@ let project: Project = Project(
 
 let schemes: [Scheme] = [
     Scheme.scheme(
-        name: "\(env.name)-PROD",
+        name: "\(projectEnv.name)-PROD",
         shared: true,
-        buildAction: .buildAction(targets: ["\(env.name)"]),
+        buildAction: .buildAction(targets: ["\(projectEnv.name)"]),
         runAction: .runAction(configuration: .release),
         archiveAction: .archiveAction(configuration: .release),
         profileAction: .profileAction(configuration: .release),

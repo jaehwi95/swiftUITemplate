@@ -7,7 +7,9 @@ A template project that uses Tuist for modular architecture, The Composable Arch
 
 ## Plugins
 
-- George Washington
+- ConfigPlugin
+   - plugin for configuring Xcode project builds
+   - Build configuration is used to separate deployment environment such as development, stage, and production
 
 ## Project Structure
 

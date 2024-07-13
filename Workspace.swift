@@ -2,7 +2,7 @@ import ProjectDescription
 import EnvPlugin
 
 let workspace = Workspace(
-    name: "\(env.name)-WorkSpace",
+    name: workspaceEnv.name,
     projects: [
         "Projects/App"
     ],

@@ -1,0 +1,18 @@
+//
+//  Workspace.swift
+//  
+//
+//  Created by Jaehwi Kim on 5/3/25.
+//
+
+import ProjectDescription
+
+let workspace = Workspace(
+    name: "swiftUITemplate",
+    projects: [
+        "Projects/App",
+        "Projects/Feature",
+        "Projects/Domain",
+        "Projects/Data"
+    ]
+)

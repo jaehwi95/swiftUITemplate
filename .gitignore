@@ -68,28 +68,3 @@ Derived/
 
 ### Tuist managed dependencies ###
 Tuist/.build
-
-
-### Custom added dependencies ##
-**/*.xcodeproj
-**/*.xcworkspace
-*.xcarchive
-tmp/
-/build/
-.env
-.idea/
-*.profraw
-**/Derived/
-Tuist.xcworkspace
-Tuist/Dependencies/SwiftPackageManager
-Tuist/Dependencies/graph.json
-
-# VSCode Settings
-.vscode/launch.json
-
-# Release artifacts
-.bundle
-
-# Tuist Cloud
-TuistCloud
-!make/tasks/cloud

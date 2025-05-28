@@ -1,8 +1,12 @@
 //
 //  Dependency+Templates.swift
-//  ModulePlugin
+//  DependencyPlugin
 //
 //  Created by Jaehwi Kim on 5/22/25.
 //
 
-import Foundation
+import ProjectDescription
+
+private extension TargetDependency {
+    
+}

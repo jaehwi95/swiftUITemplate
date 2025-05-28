@@ -7,55 +7,48 @@
 
 import ProjectDescription
 
-private extension ConfigurationName {
-    static let dev: ConfigurationName = .configuration("DEV")
-    static let qa: ConfigurationName = .configuration("QA")
-    static let stage: ConfigurationName = .configuration("STAGE")
-    static let prod: ConfigurationName = .configuration("PROD")
-}
-
 private extension Array where Element == Configuration {
     static let `default`: [Configuration] = [
         .debug(
-            name: .dev,
-            settings: ["SWIFT_ACTIVE_COMPILATION_CONDITIONS": "DEV"],
-            xcconfig: .relativeToRoot("Configurations/DEV.xcconfig")
+            name: BuildConfig.dev.configurationName,
+            settings: BuildConfig.dev.buildSettings,
+            xcconfig: BuildConfig.dev.xcconfigPath
         ),
         .debug(
-            name: .qa,
-            settings: ["SWIFT_ACTIVE_COMPILATION_CONDITIONS": "QA"],
-            xcconfig: .relativeToRoot("Configurations/QA.xcconfig")
+            name: BuildConfig.qa.configurationName,
+            settings: BuildConfig.qa.buildSettings,
+            xcconfig: BuildConfig.qa.xcconfigPath
         ),
         .release(
-            name: .stage,
-            settings: ["SWIFT_ACTIVE_COMPILATION_CONDITIONS": "STAGE"],
-            xcconfig: .relativeToRoot("Configurations/STAGE.xcconfig")
+            name: BuildConfig.stage.configurationName,
+            settings: BuildConfig.stage.buildSettings,
+            xcconfig: BuildConfig.stage.xcconfigPath
         ),
         .release(
-            name: .prod,
-            settings: ["SWIFT_ACTIVE_COMPILATION_CONDITIONS": "PROD"],
-            xcconfig: .relativeToRoot("Configurations/PROD.xcconfig")
+            name: BuildConfig.prod.configurationName,
+            settings: BuildConfig.prod.buildSettings,
+            xcconfig: BuildConfig.prod.xcconfigPath
         )
     ]
     
     static let devProd: [Configuration] = [
         .debug(
-            name: .dev,
-            settings: ["SWIFT_ACTIVE_COMPILATION_CONDITIONS": "DEV"],
-            xcconfig: .relativeToRoot("Configurations/DEV.xcconfig")
+            name: BuildConfig.dev.configurationName,
+            settings: BuildConfig.dev.buildSettings,
+            xcconfig: BuildConfig.dev.xcconfigPath
         ),
         .release(
-            name: .prod,
-            settings: ["SWIFT_ACTIVE_COMPILATION_CONDITIONS": "PROD"],
-            xcconfig: .relativeToRoot("Configurations/PROD.xcconfig")
+            name: BuildConfig.prod.configurationName,
+            settings: BuildConfig.prod.buildSettings,
+            xcconfig: BuildConfig.prod.xcconfigPath
         )
     ]
     
     static let prodOnly: [Configuration] = [
         .release(
-            name: .prod,
-            settings: ["SWIFT_ACTIVE_COMPILATION_CONDITIONS": "PROD"],
-            xcconfig: .relativeToRoot("Configurations/PROD.xcconfig")
+            name: BuildConfig.prod.configurationName,
+            settings: BuildConfig.prod.buildSettings,
+            xcconfig: BuildConfig.prod.xcconfigPath
         )
     ]
 }

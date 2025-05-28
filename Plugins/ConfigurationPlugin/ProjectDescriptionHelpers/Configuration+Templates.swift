@@ -37,4 +37,25 @@ public extension Array where Element == Configuration {
             xcconfig: .relativeToRoot("Configurations/PROD.xcconfig")
         )
     ]
+    
+    static let devProd: [Configuration] = [
+        .debug(
+            name: .dev,
+            settings: ["SWIFT_ACTIVE_COMPILATION_CONDITIONS": "DEV"],
+            xcconfig: .relativeToRoot("Configurations/DEV.xcconfig")
+        ),
+        .release(
+            name: .prod,
+            settings: ["SWIFT_ACTIVE_COMPILATION_CONDITIONS": "PROD"],
+            xcconfig: .relativeToRoot("Configurations/PROD.xcconfig")
+        )
+    ]
+    
+    static let prodOnly: [Configuration] = [
+        .release(
+            name: .prod,
+            settings: ["SWIFT_ACTIVE_COMPILATION_CONDITIONS": "PROD"],
+            xcconfig: .relativeToRoot("Configurations/PROD.xcconfig")
+        )
+    ]
 }

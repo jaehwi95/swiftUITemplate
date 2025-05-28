@@ -1,6 +1,6 @@
 //
 //  Constants.swift
-//  ModulePlugin
+//  DependencyPlugin
 //
 //  Created by Jaehwi Kim on 5/17/25.
 //

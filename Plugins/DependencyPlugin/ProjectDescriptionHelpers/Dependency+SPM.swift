@@ -12,5 +12,5 @@ extension TargetDependency {
 }
 
 extension TargetDependency.SPM {
-    static let TCA = TargetDependency.external(name: "ComposableArchitecture")
+    static let TCA = TargetDependency.external(name: ExternalDependency.tca.rawValue)
 }

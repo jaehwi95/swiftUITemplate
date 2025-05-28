@@ -9,18 +9,18 @@ import ProjectDescription
 
 extension ProjectDescription.Path {
     static var app: Self {
-        return .relativeToRoot("Projects/App")
+        return .relativeToRoot(BasePath.app.rawValue)
     }
     
     static func relativeToData(path: String) -> Self {
-        return .relativeToRoot("Projects/Data/\(path)")
+        return .relativeToRoot("\(BasePath.data)/\(path)")
     }
     
     static func relativeToDomain(path: String) -> Self {
-        return .relativeToRoot("Projects/Domain/\(path)")
+        return .relativeToRoot("\(BasePath.domain)/\(path)")
     }
     
     static func relativeToFeature(path: String) -> Self {
-        return .relativeToRoot("Projects/Feature/\(path)")
+        return .relativeToRoot("\(BasePath.feature)/\(path)")
     }
 }

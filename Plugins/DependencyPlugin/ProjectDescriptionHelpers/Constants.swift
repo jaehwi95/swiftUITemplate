@@ -7,10 +7,6 @@
 
 import ProjectDescription
 
-// MARK: Modify this for new project
-public enum Constants {
-    public static let appName: String = "MyApp"
-    public static let organizationName: String = "jaebi"
-    public static let targetName: String = "swiftUITemplate"
-    public static let deploymentTarget: DeploymentTargets = .iOS("18.0")
-}
+let externalDependencies: Set<String> = [
+    "ComposableArchitecture",
+]

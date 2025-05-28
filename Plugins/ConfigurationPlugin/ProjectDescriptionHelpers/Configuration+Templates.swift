@@ -1,20 +1,20 @@
 //
 //  Configuration+Templates.swift
-//  ModulePlugin
+//  ConfigurationPlugin
 //
 //  Created by Jaehwi Kim on 5/22/25.
 //
 
 import ProjectDescription
 
-extension ConfigurationName {
-    static let dev = .configuration("DEV")
-    static let qa = .configuration("QA")
-    static let stage = .configuration("STAGE")
-    static let prod = .configuration("PROD")
+private extension ConfigurationName {
+    static let dev: ConfigurationName = .configuration("DEV")
+    static let qa: ConfigurationName = .configuration("QA")
+    static let stage: ConfigurationName = .configuration("STAGE")
+    static let prod: ConfigurationName = .configuration("PROD")
 }
 
-public extension Array where Element == Configuration {
+private extension Array where Element == Configuration {
     static let `default`: [Configuration] = [
         .debug(
             name: .dev,

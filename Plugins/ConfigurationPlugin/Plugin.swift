@@ -1,6 +1,6 @@
 //
 //  Plugin.swift
-//  Plugins
+//  ConfigurationPlugin
 //
 //  Created by Jaehwi Kim on 5/17/25.
 //

@@ -9,6 +9,7 @@ import ProjectDescription
 
 let project = Project(
     name: "App",
+    organizationName: "jaebi",
     targets: [
         .target(
             name: "App",
